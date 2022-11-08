@@ -1,2 +1,4 @@
 *.csv
 API/__pycache__
+venv/*
+model/*

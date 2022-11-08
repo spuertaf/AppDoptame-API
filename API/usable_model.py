@@ -18,12 +18,12 @@ def read_img(img_path: str, size=224):
 
 
 def prediction(img_path:str) -> str:
-    labels = pd.read_csv("C:\\Users\\Admin\\OneDrive - Universidad EAFIT\\Sistemas - EAFIT\\6to Semestre\\P1\\AppDoptame\\dogRacePrediction\\labels.csv")
+    labels = pd.read_csv("labels.csv")
     breed = labels["breed"].unique()
     
     id2breed = {i: name for i, name in enumerate(breed)}
     
-    model =  tf.keras.models.load_model("C:\\Users\\Admin\\OneDrive - Universidad EAFIT\\Sistemas - EAFIT\\6to Semestre\\P1\\AppDoptame\\dogRacePrediction\\model\\model.h5")
+    model =  tf.keras.models.load_model("model.h5")
     image = read_img(img_path)
     image = np.expand_dims(image, axis= 0)
     prediction = model.predict(image)
