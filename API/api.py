@@ -33,14 +33,6 @@ if __name__ == '__main__':
             predict = f"STATUS CODE: 400 \nError en la prediccion"
         return {"race":predict}
     
-    
-    
-    @app.route("/recommendation") #ruta de la api para recomendacion de mascota
-    def get_recommendation():
-        user_id = request.args.get('user_id', default =1, type = str)
-        response = top3_liked_pets_by_user(user_id, "")
-        return response
-    
 
 
     app.run(host = '0.0.0.0',port = 80, debug = True) 
