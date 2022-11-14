@@ -1,6 +1,4 @@
-from flask import Flask
-from usable_model import prediction
-from flask import request
+from flask import Flask, request
 from liked_pets import top3_liked_pets_by_user
 
 
@@ -28,4 +26,4 @@ if __name__ == '__main__':
     
 
 
-    app.run(host = '0.0.0.0',port = 80, debug = True) 
+    app.run(host = '10.128.0.5',port = 80, debug = True) 
