@@ -2,12 +2,12 @@ import numpy as np
 import pandas as pd
 import cv2
 import tensorflow as tf
-import urllib.request as ur
+import urllib.request
 
 
 
-def read_img(img_path: str, size=224):
-    response = ur.urlopen(img_path)
+def read_img(img_path:str, size=224):
+    response = urllib.request.urlopen(img_path)
     image = np.asarray(bytearray(response.read()), dtype="uint8")
     image = cv2.imdecode(image, cv2.IMREAD_COLOR)
     image = cv2.resize(image, (size, size))
